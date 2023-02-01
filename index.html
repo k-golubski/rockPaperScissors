@@ -65,7 +65,7 @@
 
         function game() {
             while (compScore<5 && playerScore<5) {
-                playerChoice = 'PaPeR';
+                let playerChoice = prompt("Choose rock, paper, or scissors");
                 playerChoice = playerChoice.toLowerCase();
                 compChoice = getComputerChoice();
                 console.log(playRound(playerChoice, compChoice));
