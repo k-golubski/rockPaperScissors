@@ -10,6 +10,7 @@
     <script>
         function getComputerChoice() {
             compChoice = '';
+            // Get a random number of 1,2, or 3 and assign it rock, paper, or scissors
             num = Math.floor(Math.random() * 3) + 1;
             if (num === 1) {
                 compChoice = 'rock';
@@ -23,6 +24,35 @@
             return compChoice;
         }
         console.log(getComputerChoice());
+
+        function playRound(playerChoice, compChoice) {
+            if (playerChoice === compChoice) {
+                console.log("It's a tie!")
+            }
+            else if (playerChoice === 'rock' && compChoice === 'scissors') {
+                console.log("Computer lost this round");
+            }
+            else if (playerChoice === 'rock' && compChoice === 'paper') {
+                console.log("Computer wins this round");
+            }
+            else if (playerChoice === 'paper' && compChoice === 'scissors') {
+                console.log("Computer won this round");
+            }
+            else if (playerChoice === 'paper' && compChoice === 'rock') {
+                console.log("Computer lost this round");
+            }
+            else if (playerChoice === 'scissors' && compChoice === 'paper') {
+                console.log("Computer lost this round");
+            }
+            else if (playerChoice === 'scissors' && compChoice === 'rock') {
+                console.log("Computer won this round");
+            }        
+        }
+
+        playerChoice = 'rock';
+        compChoice = getComputerChoice();
+
+        playRound(playerChoice, compChoice);
     </script>
 </body>
 </html>
