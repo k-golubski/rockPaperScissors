@@ -23,51 +23,63 @@
             }
             return compChoice;
         }
-        console.log(getComputerChoice());
-        compScore = 0;
-        playerScore = 0;
+        // console.log(getComputerChoice());
+        let compScore = 0;
+        let playerScore = 0;
         function playRound(playerChoice, compChoice) {
             if (playerChoice === compChoice) {
+                console.log(`Player Score: ${playerScore} Computer Score: ${compScore}`);
                 return "It's a tie!";
             }
             else if (playerChoice === 'rock' && compChoice === 'scissors') {
                 playerScore +=1;
+                console.log(`Player Score: ${playerScore} Computer Score: ${compScore}`);
                 return "Computer lost this round";
             }
             else if (playerChoice === 'rock' && compChoice === 'paper') {
                 compScore +=1;
+                console.log(`Player Score: ${playerScore} Computer Score: ${compScore}`);
                 return "Computer wins this round";
             }
             else if (playerChoice === 'paper' && compChoice === 'scissors') {
                 compScore += 1;
+                console.log(`Player Score: ${playerScore} Computer Score: ${compScore}`);
                 return "Computer won this round";
             }
             else if (playerChoice === 'paper' && compChoice === 'rock') {
                 playerScore += 1;
+                console.log(`Player Score: ${playerScore} Computer Score: ${compScore}`);
                 return "Computer lost this round";
             }
             else if (playerChoice === 'scissors' && compChoice === 'paper') {
                 playerScore += 1;
+                console.log(`Player Score: ${playerScore} Computer Score: ${compScore}`);
                 return "Computer lost this round";
             }
             else if (playerChoice === 'scissors' && compChoice === 'rock') {
                 compScore += 1;
+                console.log(`Player Score: ${playerScore} Computer Score: ${compScore}`);
                 return "Computer won this round";
             }        
         }
 
         function game() {
-            while (compScore<=5 && playerScore<=5) {
-                playRound(playerChoice, compChoice);
+            while (compScore<5 && playerScore<5) {
+                playerChoice = 'PaPeR';
+                playerChoice = playerChoice.toLowerCase();
+                compChoice = getComputerChoice();
+                console.log(playRound(playerChoice, compChoice));
             }
         }
 
-        playerChoice = 'PaPeR';
-        playerChoice = playerChoice.toLowerCase();
-        compChoice = getComputerChoice();
-        console.log(`Player choice: ${playerChoice}`)
-        console.log(`Computer choice: ${compChoice}`)
-        console.log(playRound(playerChoice, compChoice));
+        game();
+
+        // playerChoice = 'PaPeR';
+        // playerChoice = playerChoice.toLowerCase();
+        // compChoice = getComputerChoice();
+        // console.log(`Player choice: ${playerChoice}`)
+        // console.log(`Computer choice: ${compChoice}`)
+        // console.log(playRound(playerChoice, compChoice));
     </script>
 </body>
 </html>
