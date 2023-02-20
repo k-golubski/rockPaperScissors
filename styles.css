@@ -1,0 +1,35 @@
+body {
+    background-color: lavender;
+}
+
+#title p {
+    font-size: 50px;
+    text-align: center;
+    color: darkslateblue;
+}
+
+#button_container {
+    display: flex;
+    height: 200px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#results {
+    text-align: center;
+    color: darkslateblue;
+}
+
+button {
+    background-color: lavender;
+    color: white;
+    font-weight: bold;
+    font-size: 36px;
+    border: none;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+}

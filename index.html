@@ -4,77 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="js-file.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <script>
-        function getComputerChoice() {
-            compChoice = '';
-            // Get a random number of 1,2, or 3 and assign it rock, paper, or scissors
-            num = Math.floor(Math.random() * 3) + 1;
-            if (num === 1) {
-                compChoice = 'rock';
-            }
-            else if (num === 2) {
-                compChoice = 'paper';
-            }
-            else {
-                compChoice = 'scissors';
-            }
-            return compChoice;
-        }
-        // console.log(getComputerChoice());
-        let compScore = 0;
-        let playerScore = 0;
-        function playRound(playerChoice, compChoice) {
-            if (playerChoice === compChoice) {
-                console.log(`Player choice: ${playerChoice} Computer Choice: ${compChoice}`)
-                return "It's a tie!";
-            }
-            else if (playerChoice === 'rock' && compChoice === 'scissors') {
-                playerScore +=1;
-                console.log(`Player choice: ${playerChoice} Computer Choice: ${compChoice}`)
-                return "Computer lost this round";
-            }
-            else if (playerChoice === 'rock' && compChoice === 'paper') {
-                compScore +=1;
-                console.log(`Player choice: ${playerChoice} Computer Choice: ${compChoice}`)
-                return "Computer wins this round";
-            }
-            else if (playerChoice === 'paper' && compChoice === 'scissors') {
-                compScore += 1;
-                console.log(`Player choice: ${playerChoice} Computer Choice: ${compChoice}`)
-                return "Computer won this round";
-            }
-            else if (playerChoice === 'paper' && compChoice === 'rock') {
-                playerScore += 1;
-                console.log(`Player choice: ${playerChoice} Computer Choice: ${compChoice}`)
-                return "Computer lost this round";
-            }
-            else if (playerChoice === 'scissors' && compChoice === 'paper') {
-                playerScore += 1;
-                console.log(`Player choice: ${playerChoice} Computer Choice: ${compChoice}`)
-                return "Computer lost this round";
-            }
-            else if (playerChoice === 'scissors' && compChoice === 'rock') {
-                compScore += 1;
-                console.log(`Player choice: ${playerChoice} Computer Choice: ${compChoice}`)
-                return "Computer won this round";
-            }        
-        }
+    <div id="title">
+        <p>
+            Let's play Rock Paper Scissors
+        </p>
+    </div>
+    <div id="button_container">
+        <button id="rock"><img src="./img/rock"></button>
+        <button id="paper"><img src="./img/paper"></button>
+        <button id="scissors"><img src="./img/scissors"></button>
+    </div>
+    <div id="results">
 
-        function game() {
-            while (compScore<5 && playerScore<5) {
-                let playerChoice = prompt("Choose rock, paper, or scissors");
-                playerChoice = playerChoice.toLowerCase();
-                compChoice = getComputerChoice();
-                console.log(playRound(playerChoice, compChoice));
-                console.log(`Player Score: ${playerScore} Computer Score: ${compScore}`);
-            }
-        }
-
-        game();
-
-    </script>
+    </div>
 </body>
 </html>
